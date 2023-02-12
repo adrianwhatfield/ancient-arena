@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dja1ub2orr5q6"]
+
+[ext_resource type="Script" path="res://Scenes/spell.gd" id="1_4uind"]
+[ext_resource type="Texture2D" uid="uid://dd6ig3epvv3yy" path="res://Assets/Art/flame_spell.png" id="1_5tuie"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h8xbj"]
+emission_shape = 1
+emission_sphere_radius = 10.43
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = 30.32
+angular_velocity_max = 30.32
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nqdpo"]
+radius = 2.0
+height = 6.0
+
+[node name="Spell" type="Area2D"]
+texture_filter = 1
+script = ExtResource("1_4uind")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5tuie")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Sprite2D"]
+process_material = SubResource("ParticleProcessMaterial_h8xbj")
+texture = ExtResource("1_5tuie")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_nqdpo")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
