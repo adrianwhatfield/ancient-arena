@@ -9,3 +9,9 @@ You are a wizard competing in an arena for a great reward that will set you up f
 - [ ] Permanent upgrades
 - [ ] Waves
 - [ ] Levelling system
+
+## Tools Used
+
+- [Godot Engine (v4.0)](https://godotengine.org/)
+- [Pixelorama](https://github.com/Orama-Interactive/Pixelorama)
+- [Tilesetter](https://www.tilesetter.org/)
