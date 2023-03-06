@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bar0xw41uh00x"]
+
+[ext_resource type="Texture2D" uid="uid://dtoswupa2k2cu" path="res://Assets/Art/slime.png" id="1_n6624"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1kbsw"]
+size = Vector2(20, 6)
+
+[node name="slime" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_n6624")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_1kbsw")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://h625sfbbmlac"]
+
+[ext_resource type="Texture2D" uid="uid://qtrbsig2ti6" path="res://Assets/Art/skeleton.png" id="1_enu2t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpu0b"]
+size = Vector2(10, 11)
+
+[node name="skeleton" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_enu2t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_hpu0b")
