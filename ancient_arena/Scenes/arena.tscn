@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://clja8kn4j58oo"]
+[gd_scene load_steps=8 format=3 uid="uid://clja8kn4j58oo"]
 
+[ext_resource type="Script" path="res://Scenes/arena.gd" id="1_iu25o"]
 [ext_resource type="Texture2D" uid="uid://df8txcmqdnyib" path="res://Assets/Art/tileset.png" id="1_qq3kr"]
 [ext_resource type="PackedScene" uid="uid://cwcm5uj6b5dem" path="res://Scenes/player.tscn" id="2_1trim"]
+[ext_resource type="Theme" uid="uid://dj4y8im1qs2q6" path="res://Resources/enemy_health_theme.tres" id="2_cyvgt"]
+[ext_resource type="PackedScene" uid="uid://bar0xw41uh00x" path="res://Scenes/slime.tscn" id="4_105uc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_erd8i"]
 texture = ExtResource("1_qq3kr")
@@ -908,6 +911,24 @@ terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_erd8i")
 
 [node name="arena" type="Node2D"]
+script = ExtResource("1_iu25o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 476.0
+offset_bottom = 279.0
+
+[node name="PlayerHealth" type="ProgressBar" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 13.0
+offset_right = 222.0
+offset_bottom = 40.0
+theme = ExtResource("2_cyvgt")
+value = 50.0
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -917,3 +938,6 @@ layer_0/tile_data = PackedInt32Array(2097197, 65536, 6, 2031661, 65536, 6, 19661
 
 [node name="Player" parent="." instance=ExtResource("2_1trim")]
 position = Vector2(-173, -183)
+
+[node name="slime" parent="." instance=ExtResource("4_105uc")]
+position = Vector2(-235, -101)

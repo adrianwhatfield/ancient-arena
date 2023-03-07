@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0qm8w"]
 radius = 3.0
-height = 14.0
+height = 10.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_2pqqu")
@@ -16,7 +16,7 @@ texture_filter = 1
 texture = ExtResource("1_mrbdf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 1)
+position = Vector2(2, 3)
 shape = SubResource("CapsuleShape2D_0qm8w")
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -1,7 +1,10 @@
 extends CharacterBody2D
 
+var health = Stats.player["health"]
+var health_current = Stats.player["health_current"]
+var speed = Stats.player["speed"]
+var damage = Stats.player["damage"]
 
-const SPEED = 150.0
 var aim_dist = 3
 var aim_speed = 1
 const MAX_AIM = 35
@@ -13,15 +16,15 @@ func _physics_process(delta):
 	# Movement
 	var directionX = Input.get_axis("left", "right")
 	if directionX:
-		velocity.x = directionX * SPEED
+		velocity.x = directionX * speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
 	
 	var directionY = Input.get_axis("up", "down")
 	if directionY:
-		velocity.y = directionY * SPEED
+		velocity.y = directionY * speed
 	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+		velocity.y = move_toward(velocity.y, 0, speed)
 	
 	if velocity.x < 0:
 		$Sprite2D.flip_h = true
