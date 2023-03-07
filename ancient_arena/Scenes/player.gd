@@ -6,7 +6,7 @@ var speed = Stats.player["speed"]
 var damage = Stats.player["damage"]
 
 var aim_dist = 3
-var aim_speed = 1
+var aim_speed = 2
 const MAX_AIM = 35
 
 var spell_scene = preload("res://Scenes/spell.tscn")
