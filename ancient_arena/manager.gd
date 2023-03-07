@@ -1,5 +1,9 @@
 extends Node
 
+var controller_input = false
+
+####
+
 var bullet_direction = ""
 var speed = 200
 var vector_speed = Vector2(0, 0)
