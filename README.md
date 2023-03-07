@@ -10,7 +10,7 @@ You are a wizard competing in an arena for a great reward that will set you up f
 
 - [ ] Game saving
 - [x] Attacking
-- [ ] Enemies
+- [x] Enemies
 - [x] Art assets
 
 ### Gameplay
