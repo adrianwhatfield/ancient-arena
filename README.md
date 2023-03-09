@@ -11,7 +11,9 @@ You are a wizard competing in an arena for a great reward that will set you up f
 - [ ] Game saving
 - [x] Attacking
 - [x] Enemies
+- [ ] Enemy AI
 - [x] Art assets
+- [ ] Rework controls
 
 ### Gameplay
 
