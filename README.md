@@ -13,7 +13,7 @@ You are a wizard competing in an arena for a great reward that will set you up f
 - [x] Enemies
 - [ ] Enemy AI
 - [x] Art assets
-- [ ] Rework controls
+- [x] Rework controls
 
 ### Gameplay
 
@@ -30,3 +30,4 @@ You are a wizard competing in an arena for a great reward that will set you up f
 ## Assets Used:
 
 - [Kenney Crosshair Pack](https://www.kenney.nl/assets/crosshair-pack)
+- [Kenney Particle Pack](https://www.kenney.nl/assets/particle-pack)

@@ -10,3 +10,5 @@ func _ready():
 func _process(delta):
 	$CanvasLayer/UI/PlayerHealth.value = Stats.player["health_current"]
 	$CanvasLayer/UI/PlayerHealth.max_value = Stats.player["health"]
+	$CanvasLayer/UI/PlayerMagic.value = Stats.player["magic_current"]
+	$CanvasLayer/UI/PlayerMagic.max_value = Stats.player["magic"]

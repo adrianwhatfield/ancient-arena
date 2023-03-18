@@ -9,6 +9,8 @@ var player = {
 	"speed" = 150.0,
 	"damage" = 5,
 	"score" = 0,
+	"magic" = 50,
+	"magic_current" = 50,
 }
 
 # Monster Stats

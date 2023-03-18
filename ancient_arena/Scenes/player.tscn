@@ -30,6 +30,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="Wand" type="Node2D" parent="."]
+position = Vector2(20, 0)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Wand"]
