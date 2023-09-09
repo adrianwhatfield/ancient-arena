@@ -12,3 +12,5 @@ func _process(delta):
 	$UI/UI/PlayerHealth.max_value = Stats.player["health"]
 	$UI/UI/PlayerMagic.value = Stats.player["magic_current"]
 	$UI/UI/PlayerMagic.max_value = Stats.player["magic"]
+	if Input.is_action_just_pressed("menu"):
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

@@ -43,4 +43,13 @@ vertical_alignment = 1
 [node name="CheckBox" type="CheckBox" parent="HBoxContainer"]
 layout_mode = 2
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 16.0
+offset_right = 86.0
+offset_bottom = 47.0
+text = "<- Back"
+
 [connection signal="pressed" from="HBoxContainer/CheckBox" to="." method="_on_check_box_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

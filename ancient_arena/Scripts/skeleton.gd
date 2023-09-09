@@ -12,7 +12,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	target = get_parent().get_node("Player")
-	if position.distance_to(target.position) > 50:
+	if position.distance_to(target.position) > 10:
 		position = position.move_toward(target.position, delta * speed)
 
 func _on_area_entered(area):
