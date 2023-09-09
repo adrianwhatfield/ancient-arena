@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pv81ic3chftp"
-path="res://.godot/imported/wizard.png-4446d431b45c5f57cd0f6aaf9ca417af.ctex"
+uid="uid://bt2ttslhocqu5"
+path="res://.godot/imported/stone_dark_2.png-fd226d5057bb813ca78c03b4bbc5624c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/wizard.png"
-dest_files=["res://.godot/imported/wizard.png-4446d431b45c5f57cd0f6aaf9ca417af.ctex"]
+source_file="res://Assets/Art/Walls/stone_dark_2.png"
+dest_files=["res://.godot/imported/stone_dark_2.png-fd226d5057bb813ca78c03b4bbc5624c.ctex"]
 
 [params]
 

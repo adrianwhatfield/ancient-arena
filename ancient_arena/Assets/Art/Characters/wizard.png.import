@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd6ig3epvv3yy"
-path="res://.godot/imported/flame_spell.png-3076b30396baf45828fee97874a1ff1e.ctex"
+uid="uid://bi5mpmu6c0nvk"
+path="res://.godot/imported/wizard.png-151b4b7be26eca4f8697dc3112f4f432.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/flame_spell.png"
-dest_files=["res://.godot/imported/flame_spell.png-3076b30396baf45828fee97874a1ff1e.ctex"]
+source_file="res://Assets/Art/Characters/wizard.png"
+dest_files=["res://.godot/imported/wizard.png-151b4b7be26eca4f8697dc3112f4f432.ctex"]
 
 [params]
 

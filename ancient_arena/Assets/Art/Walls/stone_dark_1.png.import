@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtoswupa2k2cu"
-path="res://.godot/imported/slime.png-5d8539f34ae6eb60096654df38b46514.ctex"
+uid="uid://2254me6xkygp"
+path="res://.godot/imported/stone_dark_1.png-606b9d1fb226e2d9caf17dd42f470dec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/slime.png"
-dest_files=["res://.godot/imported/slime.png-5d8539f34ae6eb60096654df38b46514.ctex"]
+source_file="res://Assets/Art/Walls/stone_dark_1.png"
+dest_files=["res://.godot/imported/stone_dark_1.png-606b9d1fb226e2d9caf17dd42f470dec.ctex"]
 
 [params]
 

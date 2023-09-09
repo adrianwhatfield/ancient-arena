@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df8txcmqdnyib"
-path="res://.godot/imported/tileset.png-c707915f06ff415cb9b98e226076d4cf.ctex"
+uid="uid://bf67q48a547fd"
+path="res://.godot/imported/shadow_west_darker.png-50a0d44f6d4fab0a851826e4bae5269f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/tileset.png"
-dest_files=["res://.godot/imported/tileset.png-c707915f06ff415cb9b98e226076d4cf.ctex"]
+source_file="res://Assets/Art/Walls/shadow_west_darker.png"
+dest_files=["res://.godot/imported/shadow_west_darker.png-50a0d44f6d4fab0a851826e4bae5269f.ctex"]
 
 [params]
 

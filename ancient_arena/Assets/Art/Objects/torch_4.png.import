@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qtrbsig2ti6"
-path="res://.godot/imported/skeleton.png-90a349108de44916a4a6ed52872eb3b5.ctex"
+uid="uid://va228em6l0vj"
+path="res://.godot/imported/torch_4.png-8b16b6bb22650eb065664eb28c0b9def.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/skeleton.png"
-dest_files=["res://.godot/imported/skeleton.png-90a349108de44916a4a6ed52872eb3b5.ctex"]
+source_file="res://Assets/Art/Objects/torch_4.png"
+dest_files=["res://.godot/imported/torch_4.png-8b16b6bb22650eb065664eb28c0b9def.ctex"]
 
 [params]
 
