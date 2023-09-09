@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cwcm5uj6b5dem"]
 
-[ext_resource type="Script" path="res://Scenes/player.gd" id="1_2pqqu"]
 [ext_resource type="Texture2D" uid="uid://pv81ic3chftp" path="res://Assets/Art/wizard.png" id="1_mrbdf"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_ttbjs"]
 [ext_resource type="Texture2D" uid="uid://bh02hvijqpf0k" path="res://Assets/Art/crosshair.png" id="3_u52sl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0qm8w"]
@@ -9,7 +9,7 @@ radius = 3.0
 height = 10.0
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_2pqqu")
+script = ExtResource("1_ttbjs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://h625sfbbmlac"]
 
-[ext_resource type="Script" path="res://Scenes/skeleton.gd" id="1_48wsp"]
 [ext_resource type="Texture2D" uid="uid://qtrbsig2ti6" path="res://Assets/Art/skeleton.png" id="1_enu2t"]
+[ext_resource type="Script" path="res://Scripts/skeleton.gd" id="1_mtqc1"]
 [ext_resource type="Theme" uid="uid://dj4y8im1qs2q6" path="res://Resources/enemy_health_theme.tres" id="2_x1oq7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hpu0b"]
 size = Vector2(10, 11)
 
 [node name="skeleton" type="Area2D"]
-script = ExtResource("1_48wsp")
+script = ExtResource("1_mtqc1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

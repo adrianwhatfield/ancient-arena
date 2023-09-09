@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://bar0xw41uh00x"]
 
-[ext_resource type="Script" path="res://Scenes/slime.gd" id="1_mvfmm"]
 [ext_resource type="Texture2D" uid="uid://dtoswupa2k2cu" path="res://Assets/Art/slime.png" id="1_n6624"]
+[ext_resource type="Script" path="res://Scripts/slime.gd" id="1_xvobn"]
 [ext_resource type="Theme" uid="uid://dj4y8im1qs2q6" path="res://Resources/enemy_health_theme.tres" id="2_r686h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kbsw"]
 size = Vector2(20, 6)
 
 [node name="slime" type="Area2D"]
-script = ExtResource("1_mvfmm")
+script = ExtResource("1_xvobn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
