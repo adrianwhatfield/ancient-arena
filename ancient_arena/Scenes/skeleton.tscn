@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://h625sfbbmlac"]
 
-[ext_resource type="Texture2D" uid="uid://qtrbsig2ti6" path="res://Assets/Art/skeleton.png" id="1_enu2t"]
+[ext_resource type="Texture2D" path="res://Assets/Art/skeleton.png" id="1_enu2t"]
 [ext_resource type="Script" path="res://Scripts/skeleton.gd" id="1_mtqc1"]
 [ext_resource type="Theme" uid="uid://dj4y8im1qs2q6" path="res://Resources/enemy_health_theme.tres" id="2_x1oq7"]
 

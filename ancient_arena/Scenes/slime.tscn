@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bar0xw41uh00x"]
+[gd_scene load_steps=4 format=3 uid="uid://bar0xw41uh00x"]
 
-[ext_resource type="Texture2D" uid="uid://dtoswupa2k2cu" path="res://Assets/Art/slime.png" id="1_n6624"]
 [ext_resource type="Script" path="res://Scripts/slime.gd" id="1_xvobn"]
-[ext_resource type="Theme" uid="uid://dj4y8im1qs2q6" path="res://Resources/enemy_health_theme.tres" id="2_r686h"]
+[ext_resource type="Texture2D" uid="uid://bydmp70i3n5lm" path="res://Assets/Art/Characters/jelly.png" id="2_f5bq0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kbsw"]
 size = Vector2(20, 6)
@@ -12,20 +11,11 @@ script = ExtResource("1_xvobn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_n6624")
+texture = ExtResource("2_f5bq0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_1kbsw")
-
-[node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = -22.0
-offset_top = -16.0
-offset_right = 21.0
-offset_bottom = -9.0
-theme = ExtResource("2_r686h")
-value = 50.0
-show_percentage = false
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

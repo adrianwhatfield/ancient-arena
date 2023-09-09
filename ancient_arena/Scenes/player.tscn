@@ -1,33 +1,27 @@
 [gd_scene load_steps=5 format=3 uid="uid://cwcm5uj6b5dem"]
 
-[ext_resource type="Texture2D" uid="uid://pv81ic3chftp" path="res://Assets/Art/wizard.png" id="1_mrbdf"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_ttbjs"]
+[ext_resource type="Texture2D" uid="uid://bi5mpmu6c0nvk" path="res://Assets/Art/Characters/wizard.png" id="2_ueyud"]
 [ext_resource type="Texture2D" uid="uid://dejq3l54jjplj" path="res://Assets/UI/aim.svg" id="3_05bxp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0qm8w"]
-radius = 3.0
-height = 10.0
+radius = 4.0
+height = 28.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ttbjs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_mrbdf")
+texture = ExtResource("2_ueyud")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 3)
 shape = SubResource("CapsuleShape2D_0qm8w")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
-limit_left = -800
-limit_top = -610
-limit_right = 675
-limit_bottom = 495
+zoom = Vector2(2, 2)
 limit_smoothed = true
 position_smoothing_enabled = true
-position_smoothing_speed = 10.0
 
 [node name="Wand" type="Node2D" parent="."]
 metadata/_edit_group_ = true

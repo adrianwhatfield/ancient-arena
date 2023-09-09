@@ -1,43 +1,67 @@
-[gd_scene load_steps=6 format=3 uid="uid://dja1ub2orr5q6"]
+[gd_scene load_steps=10 format=3 uid="uid://dja1ub2orr5q6"]
 
-[ext_resource type="Texture2D" uid="uid://dd6ig3epvv3yy" path="res://Assets/Art/flame_spell.png" id="1_5tuie"]
 [ext_resource type="Script" path="res://Scripts/spell.gd" id="1_7yvvw"]
+[ext_resource type="Texture2D" uid="uid://bby20br37ifd1" path="res://Assets/Art/Spells/flame_0.png" id="2_65piv"]
+[ext_resource type="Texture2D" uid="uid://cvfqa3shqajoi" path="res://Assets/Art/Spells/flame_1.png" id="3_gyv37"]
+[ext_resource type="Texture2D" uid="uid://ti4ido4g38xd" path="res://Assets/Art/Spells/magic_bolt_8.png" id="3_nf6al"]
 [ext_resource type="Texture2D" uid="uid://c7oile5acjxc7" path="res://Assets/Art/light.png" id="3_ur505"]
+[ext_resource type="Texture2D" uid="uid://ttpxoapj6i8f" path="res://Assets/Art/Spells/flame_2.png" id="4_dg1o7"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h8xbj"]
 emission_shape = 1
-emission_sphere_radius = 10.43
+emission_sphere_radius = 25.0
 particle_flag_disable_z = true
 gravity = Vector3(0, 0, 0)
-angular_velocity_min = 30.32
-angular_velocity_max = 30.32
+initial_velocity_min = 1.0
+initial_velocity_max = 10.0
+angular_velocity_min = 50.0
+angular_velocity_max = 100.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
+tangential_accel_max = 10.0
+scale_min = 0.1
+scale_max = 0.5
+color = Color(1, 1, 1, 0.682353)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nqdpo"]
-radius = 2.0
-height = 6.0
+[sub_resource type="SpriteFrames" id="SpriteFrames_gqm75"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_65piv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gyv37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dg1o7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fuwxw"]
 
 [node name="Spell" type="Area2D"]
 texture_filter = 1
 script = ExtResource("1_7yvvw")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_5tuie")
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Sprite2D"]
-process_material = SubResource("ParticleProcessMaterial_h8xbj")
-texture = ExtResource("1_5tuie")
-
-[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
-color = Color(1, 0.745098, 0.313726, 1)
-shadow_enabled = true
+[node name="PointLight2D" type="PointLight2D" parent="."]
 shadow_color = Color(0, 0, 0, 0.501961)
 texture = ExtResource("3_ur505")
-texture_scale = 0.05
+texture_scale = 0.1
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_h8xbj")
+texture = ExtResource("3_nf6al")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gqm75")
+frame_progress = 0.503341
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_nqdpo")
+shape = SubResource("CircleShape2D_fuwxw")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 15.0
