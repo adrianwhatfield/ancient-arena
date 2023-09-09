@@ -1,26 +1,22 @@
 extends Area2D
 
-var health = Stats.skeleton["health"]
-var health_current = Stats.skeleton["health_current"]
-var speed = Stats.skeleton["speed"]
-var damage = Stats.skeleton["damage"]
+var health = 10
+var damage = 4
+var speed = 100.0
 
+var target = Vector2.ZERO
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$ProgressBar.max_value = health
-	$ProgressBar.value = health_current
+	if health < 0:
+		queue_free()
 
+func _physics_process(delta):
+	target = get_parent().get_node("Player")
+	if position.distance_to(target.position) > 50:
+		position = position.move_toward(target.position, delta * speed)
 
 func _on_area_entered(area):
-	Stats.player["score"] += 1
-	queue_free()
-
+	health -= Stats.player["damage"]
 
 func _on_body_entered(body):
 	Stats.player["health_current"] -= damage

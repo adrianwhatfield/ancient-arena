@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://clja8kn4j58oo"]
+[gd_scene load_steps=35 format=3 uid="uid://clja8kn4j58oo"]
 
 [ext_resource type="Script" path="res://Scripts/arena.gd" id="1_pmwn1"]
 [ext_resource type="PackedScene" uid="uid://cwcm5uj6b5dem" path="res://Scenes/player.tscn" id="2_1trim"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://by05tcqdpsfyt" path="res://Assets/Art/Floors/floor_vines_2_new.png" id="14_qjfa4"]
 [ext_resource type="Texture2D" uid="uid://dv27c5fw1y7w0" path="res://Assets/Art/Walls/shadow_east_darker.png" id="15_4fx1q"]
 [ext_resource type="Texture2D" uid="uid://dhhnglogub7oo" path="res://Assets/Art/Walls/shadow_east_top_darker.png" id="16_cphde"]
+[ext_resource type="PackedScene" uid="uid://h625sfbbmlac" path="res://Scenes/skeleton.tscn" id="19_1vp7p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3yvya"]
 texture = ExtResource("3_fun4x")
@@ -160,3 +161,27 @@ position = Vector2(-173, -183)
 
 [node name="slime" parent="." instance=ExtResource("4_105uc")]
 position = Vector2(-235, -101)
+
+[node name="skeleton" parent="." instance=ExtResource("19_1vp7p")]
+position = Vector2(-446, 160)
+
+[node name="skeleton2" parent="." instance=ExtResource("19_1vp7p")]
+position = Vector2(-732, -132)
+
+[node name="skeleton3" parent="." instance=ExtResource("19_1vp7p")]
+position = Vector2(713, -155)
+
+[node name="skeleton4" parent="." instance=ExtResource("19_1vp7p")]
+position = Vector2(719, 188)
+
+[node name="slime2" parent="." instance=ExtResource("4_105uc")]
+position = Vector2(335, 155)
+
+[node name="skeleton5" parent="." instance=ExtResource("19_1vp7p")]
+position = Vector2(238, -332)
+
+[node name="slime3" parent="." instance=ExtResource("4_105uc")]
+position = Vector2(386, -196)
+
+[node name="slime4" parent="." instance=ExtResource("4_105uc")]
+position = Vector2(-867, 249)
