@@ -1,5 +1,7 @@
 extends Node
 
+var gamepad = false
+
 # Player's Stats
 
 var player = {

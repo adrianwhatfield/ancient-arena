@@ -12,4 +12,4 @@ func _process(delta):
 
 
 func _on_check_box_pressed():
-	Manager.controller_input = true
+	Stats.gamepad = true

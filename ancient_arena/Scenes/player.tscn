@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://pv81ic3chftp" path="res://Assets/Art/wizard.png" id="1_mrbdf"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_ttbjs"]
-[ext_resource type="Texture2D" uid="uid://bh02hvijqpf0k" path="res://Assets/Art/crosshair.png" id="3_u52sl"]
+[ext_resource type="Texture2D" uid="uid://dejq3l54jjplj" path="res://Assets/UI/aim.svg" id="3_05bxp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0qm8w"]
 radius = 3.0
@@ -30,10 +30,13 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="Wand" type="Node2D" parent="."]
-position = Vector2(20, 0)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Wand"]
+modulate = Color(1, 1, 1, 0.435294)
 texture_filter = 1
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_u52sl")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_05bxp")
+
+[node name="Shoot" type="Marker2D" parent="Wand"]
+position = Vector2(38, 0)
