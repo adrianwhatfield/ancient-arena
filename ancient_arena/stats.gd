@@ -2,14 +2,12 @@ extends Node
 
 var gamepad = false
 
-# Player's Stats
-
-var player = {
-	"health" = 20,
-	"health_current" = 20,
-	"speed" = 150.0,
-	"damage" = 5,
-	"score" = 0,
-	"magic" = 50,
-	"magic_current" = 50,
-}
+var health = 20
+var health_current = 20
+var health_regen = 0
+var speed = 150.0
+var damage = 5
+var score = 0
+var magic = 50
+var magic_current = 50
+var magic_regen = 5

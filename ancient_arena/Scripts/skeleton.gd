@@ -16,7 +16,7 @@ func _physics_process(delta):
 		position = position.move_toward(target.position, delta * speed)
 
 func _on_area_entered(area):
-	health -= Stats.player["damage"]
+	health -= Stats.damage
 
 func _on_body_entered(body):
-	Stats.player["health_current"] -= damage
+	Stats.health_current -= damage
