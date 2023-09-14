@@ -20,29 +20,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0666667, 0.0196078, 0.141176, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -72.5
-offset_top = -20.0
-offset_right = 72.5
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="HBoxContainer"]
-layout_mode = 2
-text = "Use controller?"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CheckBox" type="CheckBox" parent="HBoxContainer"]
-layout_mode = 2
-
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 22.0
@@ -51,5 +28,75 @@ offset_right = 86.0
 offset_bottom = 47.0
 text = "<- Back"
 
-[connection signal="pressed" from="HBoxContainer/CheckBox" to="." method="_on_check_box_pressed"]
+[node name="Settings" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.5
+offset_top = -27.0
+offset_right = 72.5
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Gamepad" type="HBoxContainer" parent="Settings"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Settings/Gamepad"]
+layout_mode = 2
+text = "Use controller?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="Settings/Gamepad"]
+layout_mode = 2
+
+[node name="Fullscreen" type="HBoxContainer" parent="Settings"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Settings/Fullscreen"]
+layout_mode = 2
+text = "Fullscreen:"
+
+[node name="FullscreenCheck" type="CheckBox" parent="Settings/Fullscreen"]
+layout_mode = 2
+
+[node name="Resolution" type="OptionButton" parent="Settings"]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "1920 x 1080"
+popup/item_0/id = 0
+popup/item_1/text = "1280 x 800"
+popup/item_1/id = 1
+popup/item_2/text = "1280 x 720"
+popup/item_2/id = 2
+
+[node name="Sound" type="HBoxContainer" parent="Settings"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Settings/Sound"]
+layout_mode = 2
+text = "Sound"
+horizontal_alignment = 1
+
+[node name="Volume" type="HSlider" parent="Settings/Sound"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.001
+
+[node name="Mute" type="CheckBox" parent="Settings/Sound"]
+layout_mode = 2
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Settings/Gamepad/CheckBox" to="." method="_on_check_box_pressed"]
+[connection signal="toggled" from="Settings/Fullscreen/FullscreenCheck" to="." method="_on_fullscreen_check_toggled"]
+[connection signal="item_selected" from="Settings/Resolution" to="." method="_on_resolution_item_selected"]
+[connection signal="value_changed" from="Settings/Sound/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="Settings/Sound/Mute" to="." method="_on_mute_toggled"]
