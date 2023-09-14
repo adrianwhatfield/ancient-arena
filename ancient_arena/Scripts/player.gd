@@ -17,8 +17,13 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.y = move_toward(velocity.y, 0, speed)
-	
+		
 	move_and_slide()
+	
+	if velocity.x > 0:
+		$Sprite2D.flip_h = true
+	elif velocity.x < 0:
+		$Sprite2D.flip_h = false
 
 func _process(delta):
 	get_shoot()
