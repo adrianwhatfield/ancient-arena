@@ -3,11 +3,13 @@ extends Area2D
 var health = 10
 var damage = 4
 var speed = 100.0
+var score = 15
 
 var target = Vector2.ZERO
 
 func _process(delta):
 	if health < 0:
+		Stats.score += score
 		queue_free()
 
 func _physics_process(delta):
