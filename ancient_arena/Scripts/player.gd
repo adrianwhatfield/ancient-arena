@@ -5,6 +5,9 @@ var shoot_vector = Vector2.ZERO
 
 var spell_scene = preload("res://Scenes/spell.tscn")
 
+signal spell_fired
+signal player_hit
+
 func _physics_process(delta):
 	direction = Input.get_vector("left", "right", "up", "down")
 	if direction:
@@ -23,6 +26,7 @@ func _process(delta):
 	get_shoot()
 	if Input.is_action_just_pressed("shoot") and Stats.magic_current >= 10:
 		Stats.magic_current -= 10
+		spell_fired.emit()
 		shoot()
 
 func shoot():
@@ -50,3 +54,8 @@ func get_shoot():
 func _on_timer_timeout():
 	Stats.health_current += Stats.health_regen
 	Stats.magic_current += Stats.magic_regen
+
+
+func _on_hit_box_area_entered(area):
+	player_hit.emit()
+	Stats.health_current -= area.damage

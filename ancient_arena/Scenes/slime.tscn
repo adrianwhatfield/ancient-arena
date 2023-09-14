@@ -7,8 +7,8 @@
 size = Vector2(11, 16)
 
 [node name="slime" type="Area2D"]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 6
+collision_mask = 0
 script = ExtResource("1_xvobn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

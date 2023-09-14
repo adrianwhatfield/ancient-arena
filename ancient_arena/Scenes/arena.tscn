@@ -1,10 +1,12 @@
-[gd_scene load_steps=35 format=3 uid="uid://clja8kn4j58oo"]
+[gd_scene load_steps=37 format=3 uid="uid://clja8kn4j58oo"]
 
 [ext_resource type="Script" path="res://Scripts/arena.gd" id="1_pmwn1"]
 [ext_resource type="PackedScene" uid="uid://cwcm5uj6b5dem" path="res://Scenes/player.tscn" id="2_1trim"]
 [ext_resource type="PackedScene" uid="uid://gq16qto2phgm" path="res://Scenes/ui.tscn" id="2_5crim"]
 [ext_resource type="Texture2D" uid="uid://byb0cqwipd75t" path="res://Assets/Art/Walls/shadow_northeast_darker.png" id="3_fun4x"]
+[ext_resource type="AudioStream" uid="uid://djbgya1gxa1ij" path="res://Assets/Sound/hitHurt.wav" id="3_vip8o"]
 [ext_resource type="PackedScene" uid="uid://bar0xw41uh00x" path="res://Scenes/slime.tscn" id="4_105uc"]
+[ext_resource type="AudioStream" uid="uid://daptt78u27c2c" path="res://Assets/Sound/explosion.wav" id="4_e0hfs"]
 [ext_resource type="Texture2D" uid="uid://dq0gn7y65gg2j" path="res://Assets/Art/Walls/shadow_northwest_darker.png" id="4_jnwlw"]
 [ext_resource type="Texture2D" uid="uid://cpg6ti3aw84la" path="res://Assets/Art/Walls/shadow_north_darker.png" id="5_g6vku"]
 [ext_resource type="Texture2D" uid="uid://bf67q48a547fd" path="res://Assets/Art/Walls/shadow_west_darker.png" id="6_74rps"]
@@ -150,6 +152,14 @@ script = ExtResource("1_pmwn1")
 
 [node name="UI" parent="." instance=ExtResource("2_5crim")]
 
+[node name="Sounds" type="Node" parent="."]
+
+[node name="HitSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("3_vip8o")
+
+[node name="ExplodeSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("4_e0hfs")
+
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 tile_set = SubResource("TileSet_7x2ur")
@@ -185,3 +195,6 @@ position = Vector2(386, -196)
 
 [node name="slime4" parent="." instance=ExtResource("4_105uc")]
 position = Vector2(-867, 249)
+
+[connection signal="player_hit" from="Player" to="." method="_on_player_player_hit"]
+[connection signal="spell_fired" from="Player" to="." method="_on_player_spell_fired"]

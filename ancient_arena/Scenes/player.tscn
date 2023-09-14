@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwcm5uj6b5dem"]
+[gd_scene load_steps=6 format=3 uid="uid://cwcm5uj6b5dem"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_ttbjs"]
 [ext_resource type="Texture2D" uid="uid://bi5mpmu6c0nvk" path="res://Assets/Art/Characters/wizard.png" id="2_ueyud"]
@@ -7,6 +7,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0qm8w"]
 radius = 4.0
 height = 28.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kf28"]
+size = Vector2(12, 30)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
@@ -24,6 +27,13 @@ zoom = Vector2(2, 2)
 limit_smoothed = true
 position_smoothing_enabled = true
 
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("RectangleShape2D_0kf28")
+
 [node name="Wand" type="Node2D" parent="."]
 metadata/_edit_group_ = true
 
@@ -39,4 +49,5 @@ position = Vector2(38, 0)
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
