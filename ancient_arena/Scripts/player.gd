@@ -28,6 +28,9 @@ func _process(delta):
 		Stats.magic_current -= 10
 		spell_fired.emit()
 		shoot()
+	
+	if Stats.health_current <= 0:
+		get_tree().change_scene_to_file("res://Scenes/death_screen.tscn")
 
 func shoot():
 	var s = spell_scene.instantiate()

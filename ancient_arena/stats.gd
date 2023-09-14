@@ -11,3 +11,8 @@ var score = 0
 var magic = 50
 var magic_current = 50
 var magic_regen = 5
+
+func reset():
+	health_current = 20
+	magic_current = 50
+	score = 0
