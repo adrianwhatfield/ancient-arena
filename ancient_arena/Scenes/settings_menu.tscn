@@ -66,7 +66,14 @@ text = "Fullscreen:"
 [node name="FullscreenCheck" type="CheckBox" parent="Settings/Fullscreen"]
 layout_mode = 2
 
-[node name="Resolution" type="OptionButton" parent="Settings"]
+[node name="Resolution" type="HBoxContainer" parent="Settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Settings/Resolution"]
+layout_mode = 2
+text = "Resolution: "
+
+[node name="Resolution" type="OptionButton" parent="Settings/Resolution"]
 layout_mode = 2
 item_count = 3
 popup/item_0/text = "1920 x 1080"
@@ -82,7 +89,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Settings/Sound"]
 layout_mode = 2
-text = "Sound"
+text = "Sound: "
 horizontal_alignment = 1
 
 [node name="Volume" type="HSlider" parent="Settings/Sound"]
@@ -95,8 +102,8 @@ step = 0.001
 layout_mode = 2
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Settings/Gamepad/CheckBox" to="." method="_on_check_box_pressed"]
+[connection signal="toggled" from="Settings/Gamepad/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="toggled" from="Settings/Fullscreen/FullscreenCheck" to="." method="_on_fullscreen_check_toggled"]
-[connection signal="item_selected" from="Settings/Resolution" to="." method="_on_resolution_item_selected"]
+[connection signal="item_selected" from="Settings/Resolution/Resolution" to="." method="_on_resolution_item_selected"]
 [connection signal="value_changed" from="Settings/Sound/Volume" to="." method="_on_volume_value_changed"]
 [connection signal="toggled" from="Settings/Sound/Mute" to="." method="_on_mute_toggled"]
