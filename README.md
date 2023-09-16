@@ -11,7 +11,7 @@ You are a wizard competing in an arena for a great reward that will set you up f
 - [ ] Game saving
 - [x] Attacking
 - [x] Enemies
-- [ ] Enemy AI
+- [x] Enemy AI
 - [x] Art assets
 - [x] Rework controls
 
@@ -23,11 +23,10 @@ You are a wizard competing in an arena for a great reward that will set you up f
 
 ## Tools Used
 
-- [Godot Engine (v4.0)](https://godotengine.org/)
-- [Pixelorama](https://github.com/Orama-Interactive/Pixelorama)
-- [Tilesetter](https://www.tilesetter.org/)
+- [Godot Engine (v4.1)](https://godotengine.org/)
 
 ## Assets Used:
 
 - [Kenney Crosshair Pack](https://www.kenney.nl/assets/crosshair-pack)
 - [Kenney Particle Pack](https://www.kenney.nl/assets/particle-pack)
+- [Dungeon Crawl 32x32 tiles](https://opengameart.org/content/dungeon-crawl-32x32-tiles)
