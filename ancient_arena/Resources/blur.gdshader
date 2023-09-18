@@ -11,3 +11,5 @@ void fragment() {
 	vec4 fin = mix(blurred, color_over, mix_amount);
 	COLOR = fin;
 }
+
+// https://godotshaders.com/shader/simple-blur-mixed-with-a-color/
