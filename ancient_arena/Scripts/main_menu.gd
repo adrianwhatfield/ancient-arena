@@ -5,7 +5,7 @@ func _ready():
 	Stats.reset()
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/arena.tscn")
+	get_tree().change_scene_to_file("res://Scenes/store_screen.tscn")
 
 
 func _on_button_3_pressed():

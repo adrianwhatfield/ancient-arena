@@ -5,8 +5,8 @@ extends Control
 
 func _ready():
 	score.text = "Score: " + str(Stats.score)
-	coins.text = "Coins: " + str(Stats.coins)
 	Stats.calculate_coins()
+	coins.text = "Coins: " + str(Stats.coins)
 
 
 func _on_restart_pressed():

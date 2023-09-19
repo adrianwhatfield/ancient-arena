@@ -9,7 +9,15 @@ var rate: float = 1.15
 func rank_up():
 	if Stats.coins >= cost:
 		Stats.coins -= cost
+		Stats.coins = snapped(Stats.coins, 0.01)
 		rank += 1
 		cost *= rate
+		cost = snapped(cost, 0.01)
 		upgrade *= rate
+
+func check_afford():
+	if cost > Stats.coins:
+		return false
+	else:
+		return true
 

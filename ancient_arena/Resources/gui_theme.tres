@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=26 format=3 uid="uid://ddtpaskjxxic6"]
+[gd_resource type="Theme" load_steps=27 format=3 uid="uid://ddtpaskjxxic6"]
 
 [ext_resource type="FontFile" uid="uid://dkdte4bve44iq" path="res://Assets/UI/Eczar-VariableFont_wght.ttf" id="1_6sh4h"]
 
@@ -174,6 +174,18 @@ content_margin_top = 4.0
 content_margin_right = 6.0
 content_margin_bottom = 4.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xlbrr"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 1
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usari"]
 content_margin_left = 2.0
 content_margin_top = 2.0
@@ -257,6 +269,7 @@ CheckButton/styles/hover = SubResource("StyleBoxEmpty_xb1co")
 CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_xb1co")
 CheckButton/styles/normal = SubResource("StyleBoxEmpty_xb1co")
 CheckButton/styles/pressed = SubResource("StyleBoxEmpty_xb1co")
+Panel/styles/panel = SubResource("StyleBoxFlat_xlbrr")
 ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
 ProgressBar/colors/font_outline_color = Color(1, 1, 1, 1)
 ProgressBar/colors/font_shadow_color = Color(0, 0, 0, 1)
