@@ -1,11 +1,12 @@
 extends Control
 
 @onready var score = $VBoxContainer/Score
+@onready var coins = $VBoxContainer/Coins
 
 func _ready():
 	score.text = "Score: " + str(Stats.score)
+	coins.text = "Coins: " + str(Stats.coins)
 	Stats.calculate_coins()
-	print(Stats.coins)
 
 
 func _on_restart_pressed():

@@ -63,6 +63,12 @@ text = "Score: "
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Coins" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Coins: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Restart" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Restart"
