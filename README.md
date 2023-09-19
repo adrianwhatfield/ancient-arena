@@ -17,7 +17,7 @@ You are a wizard competing in an arena for a great reward that will set you up f
 
 ### Gameplay
 
-- [ ] Permanent upgrades
+- [x] Permanent upgrades
 - [ ] Waves
 - [ ] Levelling system
 
