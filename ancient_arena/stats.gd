@@ -10,12 +10,27 @@ var current_res = res_720
 var health = 20
 var health_current = 20
 var health_regen = 0
-var speed = 150.0
-var damage = 5
-var score = 0
+
 var magic = 50
 var magic_current = 50
 var magic_regen = 5
+
+var speed = Upgrade.new()
+var damage = Upgrade.new()
+var score = 0
+var coins = 0.0
+
+func _ready():
+	damage.upgrade = 5.0
+	damage.cost = 15.0
+	damage.rank = 0
+	
+	speed.upgrade = 150.0
+	speed.cost = 10.0
+	speed.rank = 0
+
+func calculate_coins():
+	coins += score * 0.1
 
 func reset():
 	health_current = 20

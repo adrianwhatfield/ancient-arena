@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var direction = Vector2.ZERO
 var shoot_vector = Vector2.ZERO
+var speed = Stats.speed.upgrade
 
 var spell_scene = preload("res://Scenes/spell.tscn")
 
@@ -11,10 +12,10 @@ signal player_hit
 func _physics_process(delta):
 	direction = Input.get_vector("left", "right", "up", "down")
 	if direction:
-		velocity = direction * Stats.speed
+		velocity = direction * speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, Stats.speed)
-		velocity.y = move_toward(velocity.y, 0, Stats.speed)
+		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.y = move_toward(velocity.y, 0, speed)
 	move_and_slide()
 	
 	if velocity.x > 0:

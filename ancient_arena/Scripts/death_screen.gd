@@ -2,8 +2,10 @@ extends Control
 
 @onready var score = $VBoxContainer/Score
 
-func _process(delta):
+func _ready():
 	score.text = "Score: " + str(Stats.score)
+	Stats.calculate_coins()
+	print(Stats.coins)
 
 
 func _on_restart_pressed():

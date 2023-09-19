@@ -1,6 +1,5 @@
 extends Control
 
-
 func _ready():
 	$VBoxContainer/Start.grab_focus()
 	Stats.reset()

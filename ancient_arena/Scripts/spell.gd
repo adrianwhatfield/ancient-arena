@@ -12,4 +12,4 @@ func _on_timer_timeout():
 	queue_free()
 
 func _on_area_entered(area):
-	area.health -= Stats.damage
+	area.health -= Stats.damage.upgrade
