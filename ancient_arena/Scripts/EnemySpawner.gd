@@ -1,7 +1,7 @@
 extends Node2D
 
-var skeleton_scene = preload("res://Scenes/skeleton.tscn")
-var slime_scene = preload("res://Scenes/slime.tscn")
+var skeleton_scene = preload("res://Scenes/Characters/skeleton.tscn")
+var slime_scene = preload("res://Scenes/Characters/slime.tscn")
 
 
 func _on_timer_timeout():

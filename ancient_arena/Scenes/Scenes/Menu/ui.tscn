@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://gq16qto2phgm"]
+
+[ext_resource type="Script" path="res://Scripts/ui.gd" id="1_6v0yi"]
+[ext_resource type="Theme" uid="uid://ddtpaskjxxic6" path="res://Resources/gui_theme.tres" id="2_1eik0"]
+[ext_resource type="Shader" path="res://Resources/vignette.gdshader" id="3_pqf2w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y46ac"]
+shader = ExtResource("3_pqf2w")
+shader_parameter/vignette_intensity = 0.389
+shader_parameter/vignette_opacity = 0.253
+shader_parameter/vignette_rgb = Color(0.105882, 0.0705882, 0.137255, 1)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_6v0yi")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_1eik0")
+
+[node name="Vignette" type="ColorRect" parent="UI"]
+material = SubResource("ShaderMaterial_y46ac")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerHealth" type="ProgressBar" parent="UI"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 22.0
+offset_right = 256.0
+offset_bottom = 34.0
+value = 50.0
+show_percentage = false
+
+[node name="PlayerMagic" type="ProgressBar" parent="UI"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 48.0
+offset_right = 191.0
+offset_bottom = 59.0
+value = 50.0
+show_percentage = false
+
+[node name="Score" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -610.0
+offset_top = 62.0
+offset_right = -543.0
+offset_bottom = 109.0
+grow_horizontal = 2
+text = "Score: "

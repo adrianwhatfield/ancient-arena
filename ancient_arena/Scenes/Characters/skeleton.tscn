@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://h625sfbbmlac"]
+
+[ext_resource type="Script" path="res://Scripts/skeleton.gd" id="1_mtqc1"]
+[ext_resource type="Texture2D" uid="uid://bdpt0ssq0cqho" path="res://Assets/Art/Characters/skeleton_humanoid_small_new.png" id="2_xuaa8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpu0b"]
+size = Vector2(10, 11)
+
+[node name="skeleton" type="Area2D"]
+collision_layer = 6
+collision_mask = 0
+script = ExtResource("1_mtqc1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_xuaa8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_hpu0b")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

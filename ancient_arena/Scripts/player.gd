@@ -4,7 +4,7 @@ var direction = Vector2.ZERO
 var shoot_vector = Vector2.ZERO
 var speed = Stats.speed.upgrade
 
-var spell_scene = preload("res://Scenes/spell.tscn")
+var spell_scene = preload("res://Scenes/Objects/spell.tscn")
 
 signal spell_fired
 signal player_hit
@@ -31,7 +31,7 @@ func _process(delta):
 		shoot()
 	
 	if Stats.health_current <= 0:
-		get_tree().change_scene_to_file("res://Scenes/death_screen.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Scenes/Menu/death_screen.tscn")
 
 func shoot():
 	var s = spell_scene.instantiate()
