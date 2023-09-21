@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3 uid="uid://b48bh145rus56"]
+
+[ext_resource type="Script" path="res://upgrade.gd" id="1_s485g"]
+
+[resource]
+script = ExtResource("1_s485g")
+value = 5.0
+cost = 15.0
+rank = 0
+rate = 1.15

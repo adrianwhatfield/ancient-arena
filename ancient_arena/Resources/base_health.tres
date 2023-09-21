@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3 uid="uid://bj1e4gslay4mp"]
+
+[ext_resource type="Script" path="res://upgrade.gd" id="1_76yb0"]
+
+[resource]
+script = ExtResource("1_76yb0")
+value = 20.0
+cost = 25.0
+rank = 0
+rate = 1.2
