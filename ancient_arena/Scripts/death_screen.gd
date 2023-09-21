@@ -1,16 +1,17 @@
 extends Control
 
-@onready var score = $VBoxContainer/Score
-@onready var coins = $VBoxContainer/Coins
+@onready var score_label = $VBoxContainer/Score
+@onready var coins_label = $VBoxContainer/Coins
+var stats = preload("res://Resources/player_stats.tres")
 
 func _ready():
-	score.text = "Score: " + str(Stats.score)
-	Stats.calculate_coins()
-	coins.text = "Coins: " + str(Stats.coins)
+	score_label.text = "Score: " + str(stats.score)
+	stats.calculate_coins()
+	coins_label.text = "Coins: " + str(stats.coins)
 
 
 func _on_restart_pressed():
-	Stats.reset()
+	stats.reset()
 	get_tree().change_scene_to_file("res://Scenes/Scenes/Game/arena.tscn")
 
 
