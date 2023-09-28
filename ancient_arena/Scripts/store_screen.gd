@@ -16,49 +16,63 @@ extends Control
 @onready var speed_button = $VBoxContainer/VBoxContainer/HBoxContainer2/Speed/RankUp
 @onready var damage_button = $VBoxContainer/VBoxContainer/HBoxContainer2/Damage/RankUp
 
+var stats = preload("res://Resources/player_stats.tres")
 
 func _process(delta):
-	coins_label.text = "Coins: " + str(Stats.coins)
-	health_rank.text = "Health Rank: " + str(Stats.health.rank)
-	magic_rank.text = "Magic Rank: " + str(Stats.magic.rank)
-	speed_rank.text = "Speed Rank: " + str(Stats.speed.rank)
-	damage_rank.text = "Damage Rank: " + str(Stats.damage.rank)
+	coins_label.text = "Coins: " + str(stats.coins)
+	health_rank.text = "Health Rank: " + str(stats.health.rank)
+	magic_rank.text = "Magic Rank: " + str(stats.mana.rank)
+	speed_rank.text = "Speed Rank: " + str(stats.speed.rank)
+	damage_rank.text = "Damage Rank: " + str(stats.damage.rank)
 	
-	health_cost.text = str(Stats.health.cost)
-	magic_cost.text = str(Stats.magic.cost)
-	speed_cost.text = str(Stats.speed.cost)
-	damage_cost.text = str(Stats.damage.cost)
+	health_cost.text = str(stats.health.cost)
+	magic_cost.text = str(stats.mana.cost)
+	speed_cost.text = str(stats.speed.cost)
+	damage_cost.text = str(stats.damage.cost)
 	
-	if Stats.health.check_afford() == false:
+	if check_afford(stats.health) == false:
 		health_button.disabled = true
 	
-	if Stats.magic.check_afford() == false:
+	if check_afford(stats.mana) == false:
 		magic_button.disabled = true
 	
-	if Stats.damage.check_afford() == false:
+	if check_afford(stats.damage) == false:
 		damage_button.disabled = true
 	
-	if Stats.speed.check_afford() == false:
+	if check_afford(stats.speed) == false:
 		speed_button.disabled = true
 
+func check_afford(stat):
+	if stat.cost >= stats.coins:
+		return false
+	else:
+		return true
 
 func _on_health_rank_up_pressed():
-	Stats.health.rank_up()
-	Stats.health_current = Stats.health.upgrade
+	stats.coins -= stats.health.cost
+	stats.health.rank_up()
+	stats.health_current = stats.health.value
 
 
 func _on_magic_rank_up_pressed():
-	Stats.magic.rank_up()
-	Stats.magic_current = Stats.magic.upgrade
+	stats.coins -= stats.mana.cost
+	stats.mana.rank_up()
+	stats.mana_current = stats.mana.value
 
 
 func _on_speed_rank_up_pressed():
-	Stats.speed.rank_up()
+	stats.coins -= stats.speed.cost
+	stats.speed.rank_up()
 
 
 func _on_damage_rank_up_pressed():
-	Stats.damage.rank_up()
+	stats.coins -= stats.damage.cost
+	stats.damage.rank_up()
 
 
 func _on_play_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Scenes/Game/arena.tscn")
+
+
+func _on_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Scenes/Menu/main_menu.tscn")

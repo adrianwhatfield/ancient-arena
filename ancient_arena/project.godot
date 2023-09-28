@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Stats="*res://stats.gd"
+SaveGame="*res://save_game.gd"
 
 [display]
 

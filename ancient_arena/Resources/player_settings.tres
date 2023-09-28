@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Settings" load_steps=2 format=3 uid="uid://duvchkd82rxlb"]
+
+[ext_resource type="Script" path="res://settings.gd" id="1_5b5te"]
+
+[resource]
+script = ExtResource("1_5b5te")
+gamepad = false
+fullscreen = false
+volume = 0.2
+resolution = 2

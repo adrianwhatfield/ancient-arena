@@ -1,5 +1,7 @@
 extends Area2D
 
+var stats = preload("res://Resources/player_stats.tres")
+
 var health = 10
 var damage = 4
 var speed = 100.0
@@ -9,7 +11,7 @@ var target = Vector2.ZERO
 
 func _process(delta):
 	if health < 0:
-		Stats.score += score
+		stats.score += score
 		queue_free()
 
 func _physics_process(delta):

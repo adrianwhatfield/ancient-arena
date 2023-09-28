@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
+var stats = preload("res://Resources/player_stats.tres")
+var settings = preload("res://Resources/player_settings.tres")
+
 var direction = Vector2.ZERO
 var shoot_vector = Vector2.ZERO
-var speed = Stats.speed.upgrade
+var speed = stats.speed.value
 
 var spell_scene = preload("res://Scenes/Objects/spell.tscn")
 
@@ -25,12 +28,12 @@ func _physics_process(delta):
 
 func _process(delta):
 	get_shoot()
-	if Input.is_action_just_pressed("shoot") and Stats.magic_current >= 10:
-		Stats.magic_current -= 10
+	if Input.is_action_just_pressed("shoot") and stats.mana_current >= 10:
+		stats.mana_current -= 10
 		spell_fired.emit()
 		shoot()
 	
-	if Stats.health_current <= 0:
+	if stats.health_current <= 0:
 		get_tree().change_scene_to_file("res://Scenes/Scenes/Menu/death_screen.tscn")
 
 func shoot():
@@ -43,7 +46,7 @@ func get_shoot():
 	var screen_height = screen_rect.x
 	var screen_width = screen_rect.y
 	
-	if Stats.gamepad == true:
+	if settings.gamepad == true:
 		shoot_vector = Input.get_vector("aim_left", "aim_right", "aim_up", "aim_down")
 		shoot_vector.normalized()
 		
@@ -51,15 +54,15 @@ func get_shoot():
 		shoot_vector.y *= (screen_height * 2.25)
 		
 		$Wand.look_at(shoot_vector)
-	elif Stats.gamepad == false:
+	elif settings.gamepad == false:
 		$Wand.look_at(get_global_mouse_position())
 
 
 func _on_timer_timeout():
-	Stats.health_current += Stats.health_regen
-	Stats.magic_current += Stats.magic_regen
+	stats.health_current += stats.health_regen
+	stats.mana_current += stats.mana_regen
 
 
 func _on_hit_box_area_entered(area):
 	player_hit.emit()
-	Stats.health_current -= area.damage
+	stats.health_current -= area.damage
