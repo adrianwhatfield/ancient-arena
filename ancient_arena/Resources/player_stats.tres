@@ -42,4 +42,4 @@ mana_current = 50.0
 damage = SubResource("Resource_m2yxr")
 speed = SubResource("Resource_6eelu")
 score = 0
-coins = 1000.0
+coins = 0.0
