@@ -72,3 +72,7 @@ func _on_damage_rank_up_pressed():
 
 func _on_play_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Scenes/Game/arena.tscn")
+
+
+func _on_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Scenes/Menu/main_menu.tscn")

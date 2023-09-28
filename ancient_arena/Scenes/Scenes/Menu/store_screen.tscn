@@ -163,8 +163,17 @@ text = "  Play  "
 
 [node name="MenuMusic" parent="." instance=ExtResource("5_l0ipv")]
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 20.0
+offset_right = 90.0
+offset_bottom = 58.0
+text = "<- Back"
+
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/Health/RankUp" to="." method="_on_health_rank_up_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/Magic/RankUp" to="." method="_on_magic_rank_up_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer2/Speed/RankUp" to="." method="_on_speed_rank_up_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer2/Damage/RankUp" to="." method="_on_damage_rank_up_pressed"]
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
