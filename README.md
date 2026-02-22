@@ -8,7 +8,8 @@ You are a wizard competing in an arena for a great reward that will set you up f
 
 ### Basics
 
-- [ ] Game saving
+- [x] Game saving
+- [ ] Automatic game saving
 - [x] Attacking
 - [x] Enemies
 - [x] Enemy AI
@@ -20,10 +21,17 @@ You are a wizard competing in an arena for a great reward that will set you up f
 - [x] Permanent upgrades
 - [ ] Waves
 - [ ] Levelling system
+- [ ] Better enemy pathfinding
+- [ ] Rework store
+
+### Graphics
+
+- [ ] Animations
+- [ ] Tile map to tile map layer
 
 ## Tools Used
 
-- [Godot Engine (v4.1)](https://godotengine.org/)
+- [Godot Engine (v4.6)](https://godotengine.org/)
 
 ## Assets Used:
 
