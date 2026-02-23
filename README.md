@@ -20,7 +20,7 @@ You are a wizard competing in an arena for a great reward that will set you up f
 
 - [x] Permanent upgrades
 - [ ] Waves
-- [ ] Better enemy pathfinding
+- [x] Better enemy pathfinding
 - [ ] Make enemy drops (XP and coins)
 - [ ] Rework stats so they're separate from each other (not one big file, makes adding more easier)
 

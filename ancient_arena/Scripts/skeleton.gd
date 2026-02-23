@@ -28,7 +28,7 @@ func _ready() -> void:
 	for boid in boid_group:
 		boids.append(boid)
 
-func _process(delta):
+func _process(_delta):
 	if health < 0:
 		stats.score += score
 		self.remove_from_group("Skeletons")
@@ -49,9 +49,9 @@ func _physics_process(delta):
 	translate(velocity * delta)
 
 func steer(towards):
-	var steer: Vector2 = towards - velocity
-	steer = steer.normalized()
-	return steer
+	var steer_dir = towards - velocity
+	steer_dir = steer_dir.normalized()
+	return steer_dir
 
 func process_seperation(neighbors):
 	var vector: Vector2 = Vector2()
