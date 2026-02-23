@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwcm5uj6b5dem"]
+[gd_scene format=3 uid="uid://cwcm5uj6b5dem"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_ttbjs"]
+[ext_resource type="Script" uid="uid://ocgium5bbq1o" path="res://Scripts/player.gd" id="1_ttbjs"]
 [ext_resource type="Texture2D" uid="uid://bi5mpmu6c0nvk" path="res://Assets/Art/Characters/wizard.png" id="2_ueyud"]
 [ext_resource type="Texture2D" uid="uid://dejq3l54jjplj" path="res://Assets/UI/aim.svg" id="3_05bxp"]
 
@@ -11,42 +11,42 @@ height = 28.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kf28"]
 size = Vector2(8, 26)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=1932327328]
 collision_layer = 3
 script = ExtResource("1_ttbjs")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1226472265]
 texture_filter = 1
 texture = ExtResource("2_ueyud")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=135793568]
 shape = SubResource("CapsuleShape2D_0qm8w")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1282320858]
 zoom = Vector2(2, 2)
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="HitBox" type="Area2D" parent="."]
+[node name="HitBox" type="Area2D" parent="." unique_id=413179554]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=2061689713]
 shape = SubResource("RectangleShape2D_0kf28")
 
-[node name="Wand" type="Node2D" parent="."]
+[node name="Wand" type="Node2D" parent="." unique_id=50244239]
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Wand"]
+[node name="Sprite2D" type="Sprite2D" parent="Wand" unique_id=86186029]
 modulate = Color(1, 1, 1, 0.129412)
 texture_filter = 1
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_05bxp")
 
-[node name="Shoot" type="Marker2D" parent="Wand"]
+[node name="Shoot" type="Marker2D" parent="Wand" unique_id=2139141909]
 position = Vector2(38, 0)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=2105507039]
 autostart = true
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
