@@ -13,6 +13,6 @@ func _on_timer_timeout():
 	if chance <= 0.6:
 		owner.add_child(skeleton)
 		skeleton.transform = global_transform
-	elif chance >= 0.3:
-		owner.add_child(slime)
-		slime.transform = global_transform
+	#elif chance >= 0.3:
+		#owner.add_child(slime)
+		#slime.transform = global_transform

@@ -17,6 +17,8 @@ class_name Stats
 @export var score: int
 @export var coins: float
 
+var position: Vector2
+
 func calculate_coins():
 	coins += score * 0.1
 

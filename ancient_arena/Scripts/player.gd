@@ -25,6 +25,8 @@ func _physics_process(delta):
 		$Sprite2D.flip_h = true
 	elif velocity.x < 0:
 		$Sprite2D.flip_h = false
+	
+	stats.position = position
 
 func _process(delta):
 	$Wand.look_at(get_shoot_vector())
