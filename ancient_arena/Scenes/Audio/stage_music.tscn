@@ -1,7 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bspopm08xbviv"]
+[gd_scene format=3 uid="uid://bspopm08xbviv"]
 
 [ext_resource type="AudioStream" uid="uid://ckuj3tw06if84" path="res://Assets/Sound/music/level-3.wav" id="1_2q5m2"]
 
-[node name="StageMusic" type="AudioStreamPlayer"]
+[node name="StageMusic" type="AudioStreamPlayer" unique_id=2011596955]
 stream = ExtResource("1_2q5m2")
-autoplay = true

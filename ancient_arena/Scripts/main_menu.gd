@@ -7,6 +7,7 @@ func _ready():
 	$VBoxContainer/Start.grab_focus()
 	stats.reset()
 	set_settings()
+	MenuMusic.play()
 
 func set_settings():
 	if settings.fullscreen == true:

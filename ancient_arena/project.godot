@@ -22,6 +22,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 SaveGame="*res://save_game.gd"
+MenuMusic="*uid://dcrvcm11c6hjl"
+StageMusic="*uid://bspopm08xbviv"
 
 [display]
 

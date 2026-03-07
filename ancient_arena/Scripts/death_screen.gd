@@ -5,6 +5,7 @@ extends Control
 var stats = preload("res://Resources/player_stats.tres")
 
 func _ready():
+	StageMusic.stop()
 	score_label.text = "Score: " + str(stats.score)
 	stats.calculate_coins()
 	coins_label.text = "Coins: " + str(stats.coins)

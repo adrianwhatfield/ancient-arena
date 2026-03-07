@@ -3,6 +3,10 @@ extends Node2D
 @onready var hit_sound = $Sounds/HitSound
 @onready var explode_sound = $Sounds/ExplodeSound
 
+func _ready() -> void:
+	MenuMusic.stop()
+	StageMusic.play()
+
 func _process(delta):
 	if Input.is_action_just_pressed("menu"):
 		get_tree().change_scene_to_file("res://Scenes/Scenes/Menu/main_menu.tscn")
