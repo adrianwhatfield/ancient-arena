@@ -9,6 +9,7 @@ func _ready() -> void:
 
 func _process(delta):
 	if Input.is_action_just_pressed("menu"):
+		StageMusic.stop()
 		get_tree().change_scene_to_file("res://Scenes/Scenes/Menu/main_menu.tscn")
 
 

@@ -7,7 +7,6 @@ func _ready():
 	$VBoxContainer/Start.grab_focus()
 	stats.reset()
 	set_settings()
-	MenuMusic.play()
 
 func set_settings():
 	if settings.fullscreen == true:
@@ -17,7 +16,7 @@ func set_settings():
 	settings.set_volume()
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Scenes/Menu/store_screen.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Scenes/Game/arena.tscn")
 
 
 func _on_button_3_pressed():
@@ -35,3 +34,7 @@ func _on_save_pressed():
 func _on_load_pressed():
 	SaveGame.load_game()
 	set_settings()
+
+
+func _on_upgrade_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Scenes/Menu/store_screen.tscn")
