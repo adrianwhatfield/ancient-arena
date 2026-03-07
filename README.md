@@ -20,7 +20,7 @@ You are a wizard competing in an arena for a great reward that will set you up f
 
 - [x] Permanent upgrades
 - [ ] Waves
-- [x] Better enemy pathfinding
+- [ ] Better enemy pathfinding (boids didn't work)
 - [ ] Make enemy drops (XP and coins)
 - [ ] Rework stats so they're separate from each other (not one big file, makes adding more easier)
 
@@ -31,6 +31,7 @@ You are a wizard competing in an arena for a great reward that will set you up f
 
 ### Game Loop
 
+- [x] Add upgrades screen to main menu
 - [ ] Add character levelling
 - [ ] Add player levelling (increases every 5 character levels)
 - [ ] Make character select screen
