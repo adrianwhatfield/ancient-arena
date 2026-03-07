@@ -2,21 +2,36 @@
 
 [ext_resource type="Script" uid="uid://n814uww8xitf" path="res://Scripts/skeleton.gd" id="1_mtqc1"]
 [ext_resource type="Texture2D" uid="uid://bdpt0ssq0cqho" path="res://Assets/Art/Characters/skeleton_humanoid_small_new.png" id="2_xuaa8"]
+[ext_resource type="PackedScene" uid="uid://dwxgy7iby20mr" path="res://Scenes/Components/hit_box.tscn" id="3_tutri"]
+[ext_resource type="PackedScene" uid="uid://u210ssm8f045" path="res://Scenes/Components/hurt_box.tscn" id="4_6idjn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hpu0b"]
-size = Vector2(10, 11)
+size = Vector2(17, 27)
 
-[node name="skeleton" type="Area2D" unique_id=678287738 groups=["Skeletons"]]
-collision_layer = 7
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywfuw"]
+size = Vector2(8, 23)
+
+[node name="skeleton" type="CharacterBody2D" unique_id=668434103 groups=["Skeletons"]]
+collision_layer = 6
+collision_mask = 0
 script = ExtResource("1_mtqc1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=921905741]
 texture_filter = 1
 texture = ExtResource("2_xuaa8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=527617206]
-position = Vector2(0, 3.5)
+[node name="HitBox" parent="." unique_id=1508533871 instance=ExtResource("3_tutri")]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=527617206]
+position = Vector2(0.5, 1.5)
 shape = SubResource("RectangleShape2D_hpu0b")
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="HurtBox" parent="." unique_id=1723271617 instance=ExtResource("4_6idjn")]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=568422747]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_ywfuw")
+
+[connection signal="hit" from="HitBox" to="." method="_on_hit_box_hit"]

@@ -2,11 +2,16 @@
 
 [ext_resource type="Script" uid="uid://bhge6krcbgba" path="res://Scripts/slime.gd" id="1_xvobn"]
 [ext_resource type="Texture2D" uid="uid://bydmp70i3n5lm" path="res://Assets/Art/Characters/jelly.png" id="2_f5bq0"]
+[ext_resource type="PackedScene" uid="uid://dwxgy7iby20mr" path="res://Scenes/Components/hit_box.tscn" id="3_s8q01"]
+[ext_resource type="PackedScene" uid="uid://u210ssm8f045" path="res://Scenes/Components/hurt_box.tscn" id="4_u1guq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u1guq"]
+size = Vector2(34, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kbsw"]
 size = Vector2(11, 16)
 
-[node name="slime" type="Area2D" unique_id=995331079]
+[node name="slime" type="CharacterBody2D" unique_id=2078998117 groups=["Slimes"]]
 collision_layer = 7
 script = ExtResource("1_xvobn")
 
@@ -14,9 +19,18 @@ script = ExtResource("1_xvobn")
 texture_filter = 1
 texture = ExtResource("2_f5bq0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1632447967]
+[node name="HitBox" parent="." unique_id=1508533871 instance=ExtResource("3_s8q01")]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=817009995]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_u1guq")
+
+[node name="HurtBox" parent="." unique_id=1723271617 instance=ExtResource("4_u1guq")]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1632447967]
 position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_1kbsw")
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="hit" from="HitBox" to="." method="_on_hit_box_hit"]

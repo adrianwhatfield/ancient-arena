@@ -68,7 +68,6 @@ func _on_timer_timeout():
 	stats.health_current += stats.health_regen
 	stats.mana_current += stats.mana_regen
 
-
-func _on_hit_box_area_entered(area):
+func _on_hit_box_hit(area: Area2D) -> void:
 	player_hit.emit()
-	stats.health_current -= area.damage
+	stats.health_current -= area.get_parent().damage

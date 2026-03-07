@@ -3,13 +3,14 @@
 [ext_resource type="Script" uid="uid://ocgium5bbq1o" path="res://Scripts/player.gd" id="1_ttbjs"]
 [ext_resource type="Texture2D" uid="uid://bi5mpmu6c0nvk" path="res://Assets/Art/Characters/wizard.png" id="2_ueyud"]
 [ext_resource type="Texture2D" uid="uid://dejq3l54jjplj" path="res://Assets/UI/aim.svg" id="3_05bxp"]
+[ext_resource type="PackedScene" uid="uid://dwxgy7iby20mr" path="res://Scenes/Components/hit_box.tscn" id="3_gy20a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0qm8w"]
 radius = 4.0
 height = 28.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kf28"]
-size = Vector2(8, 26)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gy20a"]
+size = Vector2(8, 14)
 
 [node name="Player" type="CharacterBody2D" unique_id=1932327328]
 collision_layer = 3
@@ -27,12 +28,12 @@ zoom = Vector2(2, 2)
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="HitBox" type="Area2D" parent="." unique_id=413179554]
-collision_layer = 0
+[node name="HitBox" parent="." unique_id=1508533871 instance=ExtResource("3_gy20a")]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=2061689713]
-shape = SubResource("RectangleShape2D_0kf28")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=562727193]
+position = Vector2(1, 3)
+shape = SubResource("RectangleShape2D_gy20a")
 
 [node name="Wand" type="Node2D" parent="." unique_id=50244239]
 metadata/_edit_group_ = true
@@ -49,5 +50,5 @@ position = Vector2(38, 0)
 [node name="Timer" type="Timer" parent="." unique_id=2105507039]
 autostart = true
 
-[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="hit" from="HitBox" to="." method="_on_hit_box_hit"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
