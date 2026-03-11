@@ -1,5 +1,14 @@
 extends Control
 
+# TODO:
+# - Make each upgrade box its own node
+# - Refactor the player stats resource so it can hold multiple characters
+# - Hard code certain factors so you only need to save the rank of each stat,
+#   the player's overall level, and their coin amount
+# - Make new character with different weapon
+# - Make character select screen before the game starts and in the upgrade
+#   store so you buy upgrades per character
+
 @onready var coins_label = $VBoxContainer/Coins
 @onready var health_rank = $VBoxContainer/VBoxContainer/HBoxContainer/Health/Rank
 @onready var magic_rank = $VBoxContainer/VBoxContainer/HBoxContainer/Magic/Rank
