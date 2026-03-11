@@ -9,10 +9,13 @@
 size = Vector2(34, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kbsw"]
-size = Vector2(11, 16)
+size = Vector2(34, 20)
 
-[node name="slime" type="CharacterBody2D" unique_id=2078998117 groups=["Slimes"]]
-collision_layer = 7
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u1guq"]
+radius = 4.5
+height = 21.0
+
+[node name="slime" type="CharacterBody2D" unique_id=2078998117 groups=["Enemies", "Slimes"]]
 script = ExtResource("1_xvobn")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=837138285]
@@ -30,7 +33,12 @@ shape = SubResource("RectangleShape2D_u1guq")
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1632447967]
-position = Vector2(-0.5, 1)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_1kbsw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1203219219]
+position = Vector2(-0.5, 5.5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_u1guq")
 
 [connection signal="hit" from="HitBox" to="." method="_on_hit_box_hit"]
